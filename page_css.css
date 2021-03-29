@@ -1,0 +1,232 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* 導覽列 */
+
+#menu_control {
+    position: absolute;
+    z-index: -2;
+    opacity: 0;
+}
+
+.header {
+    height: 60px;
+    background-color: #FCDE9C;
+    position: relative;
+    opacity: .8;
+    top: 0;
+    position: sticky;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+.logo a {
+    display: block;
+    height: 60px;
+}
+
+.logo img {
+    padding: 5px 0 0 0;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.menu_btn {
+    width: 40px;
+    height: 40px;
+    background-color: #523A34;
+    opacity: .8;
+    border-radius: 15px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.menu_btn span {
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    display: block;
+    overflow: hidden;
+}
+
+.menu_btn::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 10px;
+    width: 20px;
+    background-color: #fff;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 8px 0px #fff, 0px -8px 0px #fff;
+}
+
+nav {
+    width: 50%;
+    height: calc(100vh - 50px);
+    background-color: #FCDE9C;
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    transition: .5s;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: #3b2925;
+    padding: 10px 20px;
+    border-bottom: 1px solid #523A34;
+}
+
+#menu_control:checked~.header nav {
+    left: 0;
+}
+
+form {
+    display: none;
+}
+
+.header .header-search button,
+.header .header-search input {
+    border: none;
+    background-color: #fff;
+    padding: 5px 10px;
+}
+
+.header .header-search button:focus,
+.header .header-search input:focus {
+    outline: none;
+}
+
+.header .header-search button {
+    border-radius: 0 200px 200px 0;
+    color: #523A34;
+}
+
+.header .header-search input {
+    border-radius: 200px 0px 0px 200px;
+}
+
+@media screen and (min-width: 768px) {
+    .menu_btn {
+        display: none;
+    }
+    .header {
+        display: flex;
+        justify-content: space-around;
+        background-color: #FCDE9C;
+        align-items: center;
+        top: 0;
+        height: 80px;
+    }
+    .logo {
+        padding: 0;
+        height: 80px;
+        height: 80px;
+    }
+    .logo img {
+        padding: 0;
+        width: 80px;
+        height: 80px;
+    }
+    .header nav a {
+        text-decoration: none;
+        color: #3b2925;
+        padding: 5px 1em;
+        position: relative;
+        transform: translateY(0px);
+        transition: .3s;
+    }
+    .header nav a:hover {
+        transform: translateY(-5px);
+    }
+    .header nav a:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -5px;
+        height: 0;
+        border-bottom: 1px solid #ad918a;
+        transition: .4s;
+    }
+    .header nav a:hover:after {
+        left: 0;
+        right: 0;
+    }
+    nav {
+        position: relative;
+        left: 0;
+        display: flex;
+        width: auto;
+        height: auto;
+        top: 0;
+        background-color: transparent;
+    }
+    nav a {
+        border-bottom: none;
+        font-weight: 900;
+    }
+    .header .header-search {
+        display: flex;
+    }
+}
+
+
+/* banner */
+
+.banner {
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: #CBB3BF;
+    display: flex;
+}
+
+.banner-container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.banner .banner-title {
+    margin: auto;
+    font-size: 50px;
+    color: #fff;
+}
+
+.banner .banner-txt {
+    color: #523A34;
+    line-height: 1.8;
+}
+
+@media screen and (min-width: 768px) {
+    .banner .banner-title {
+        font-size: 90px;
+    }
+}
+
+
+/* 尾端 */
+
+.footer {
+    background-color: #523A34;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+}
