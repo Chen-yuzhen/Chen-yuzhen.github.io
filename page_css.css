@@ -5,6 +5,11 @@
     list-style: none;
 }
 
+body {
+    background-color: #CBB3BF;
+    overflow-x: hidden;
+}
+
 
 /* 導覽列 */
 
@@ -191,7 +196,7 @@ form {
 
 .banner {
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 120px);
     background-color: #CBB3BF;
     display: flex;
 }
@@ -215,9 +220,178 @@ form {
 }
 
 @media screen and (min-width: 768px) {
+    .banner {
+        height: calc(100vh - 140px);
+    }
     .banner .banner-title {
         font-size: 90px;
     }
+}
+
+
+/* title共同的 */
+
+.main-title:before {
+    content: "";
+    display: block;
+    height: 60px;
+}
+
+.main-title {
+    background-color: #CBB3BF;
+}
+
+.main-title .container {
+    width: 90%;
+    /* height: calc(100vh - 60px); */
+    margin: auto;
+    background-color: #fff;
+    /* opacity: .8; */
+    border-radius: 20px;
+}
+
+.main-title .container .title {
+    width: 100%;
+    padding: 20px 0 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #523A34;
+}
+
+.main-title .container .title h2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title .container .title h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 80px;
+    height: 2px;
+    background-color: #523A34;
+    align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+    .main-title:before {
+        content: "";
+        display: block;
+        height: 80px;
+    }
+    .main-title .container {
+        width: 80%;
+        height: calc(100vh - 80px);
+    }
+    .main-title .container .title {
+        padding: 40px 0 0 0;
+        font-size: 26px;
+    }
+}
+
+
+/* 關於 */
+
+.about {
+    /* background-color: #CBB3BF; */
+}
+
+.about .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about .container .content {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.about .container .content .photo img {
+    opacity: .8;
+    width: 200px;
+    height: 200px;
+    padding: 20px 0 0 0;
+}
+
+.about .container .content .txt {
+    width: 400px;
+    text-align: center;
+    padding: 0 5px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.about .container .content .txt .resume {
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.about .container .content .txt .resume a {
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 18px;
+    font-size: 15px;
+    background-color: #CBB3BF;
+    color: #fff;
+    border-radius: 300px;
+    letter-spacing: 2px;
+    transition: all .3s;
+}
+
+.about .container .content .txt .resume a:hover {
+    background-color: #685369;
+}
+
+@media screen and (min-width: 768px) {
+    .about .container .content {
+        /* padding: 20px; */
+        flex-wrap: nowrap;
+    }
+    .about .container .content .photo {
+        background-color: #eee;
+        align-self: flex-start;
+    }
+    .about .container .content .photo img {
+        width: 300px;
+        height: 300px;
+        padding: 10px 0 30px 0px;
+    }
+    .about .container .content .txt {
+        width: 500px;
+        padding: 0 0 0 30px;
+        line-height: 1.8;
+        font-size: 18px;
+    }
+    .about .container .content .txt .resume {
+        margin-bottom: 2em;
+        font-size: 16px;
+    }
+}
+
+
+/* 經歷 */
+
+.experience {
+    /* background-color: #CBB3BF; */
+}
+
+.experience .container {
+    height: calc(100vh - 60px);
+}
+
+
+/* 技能 */
+
+.skill {}
+
+.skill .container {
+    height: calc(100vh - 60px);
 }
 
 
@@ -229,4 +403,5 @@ form {
     text-align: center;
     padding: 10px 0;
     bottom: 0;
+    margin: 40px 0 0 0;
 }
