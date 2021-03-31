@@ -26,6 +26,7 @@ body {
     opacity: .8;
     top: 0;
     position: sticky;
+    z-index: 1;
 }
 
 .logo {
@@ -81,11 +82,11 @@ body {
 
 nav {
     width: 50%;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 60px);
     background-color: #FCDE9C;
     position: absolute;
     top: 60px;
-    left: -100%;
+    display: none;
     transition: .5s;
 }
 
@@ -95,10 +96,6 @@ nav a {
     color: #3b2925;
     padding: 10px 20px;
     border-bottom: 1px solid #523A34;
-}
-
-#menu_control:checked~.header nav {
-    left: 0;
 }
 
 form {
@@ -281,8 +278,8 @@ form {
         height: 80px;
     }
     .main-title .container {
-        width: 80%;
-        height: calc(100vh - 80px);
+        width: 85%;
+        /* height: calc(100vh - 80px); */
     }
     .main-title .container .title {
         padding: 40px 0 0 0;
@@ -349,6 +346,9 @@ form {
 }
 
 @media screen and (min-width: 768px) {
+    .about .container {
+        height: calc(100vh - 80px);
+    }
     .about .container .content {
         /* padding: 20px; */
         flex-wrap: nowrap;
@@ -377,12 +377,153 @@ form {
 
 /* 經歷 */
 
-.experience {
-    /* background-color: #CBB3BF; */
+.wrap {
+    width: 100%;
+    margin: auto;
 }
 
-.experience .container {
-    height: calc(100vh - 60px);
+.wrap::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 60px;
+    clear: both;
+}
+
+.timeline {
+    padding: 20px 20px 0;
+}
+
+.timeline li {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    position: relative;
+}
+
+.timeline li>div {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #cbb3bf;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #888;
+}
+
+.timeline div:hover {
+    background-color: rgb(203, 179, 205, .2);
+}
+
+.timeline h2 {
+    color: #523A34;
+    font-weight: 700;
+    margin-bottom: 3px;
+    font-size: 20px;
+}
+
+.timeline h4 {
+    color: #523A34;
+    font-weight: 400;
+    margin-bottom: 3px;
+}
+
+.timeline p {
+    color: #523A34;
+    font-weight: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline p a {
+    align-self: center;
+    width: 140px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+    padding: 5px 10px;
+    margin-top: 10px;
+    background-color: #CBB3BF;
+    color: #fff;
+    border-radius: 300px;
+    transition: all .3s;
+}
+
+.timeline p a:hover {
+    background-color: #685369;
+}
+
+@media screen and (min-width: 768px) {
+    .wrap {
+        width: 960px;
+    }
+    .timeline {
+        padding: 60px 50px 0;
+    }
+    .timeline li {
+        width: 50%;
+        padding: 20px 0;
+    }
+    .timeline li:nth-child(odd) {
+        float: left;
+        padding-right: 80px;
+        clear: left;
+    }
+    .timeline li:nth-child(even) {
+        float: right;
+        padding-left: 80px;
+        transform: translateY(10%);
+    }
+    .timeline li:last-child {
+        transform: translateY(10%);
+    }
+    .timeline li:nth-child(odd)::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        width: 1px;
+        top: 0;
+        height: 120%;
+        background-color: #cbb3bf;
+        right: 0;
+    }
+    .timeline li:last-child::after {
+        height: 50%;
+    }
+    .timeline li::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #cbb3bf;
+        z-index: 2;
+    }
+    .timeline li:nth-child(odd):before {
+        right: -10px;
+    }
+    .timeline li:nth-child(even):before {
+        left: -10px;
+    }
+    .timeline h2::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 80px;
+        background-color: #cbb3bf;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .timeline li:nth-child(odd) h2::after {
+        right: 0;
+    }
+    .timeline li:nth-child(even) h2::after {
+        left: 0;
+    }
 }
 
 
@@ -391,6 +532,33 @@ form {
 .skill {}
 
 .skill .container {
+    height: calc(100vh - 60px);
+}
+
+
+/* 專案 */
+
+.project {}
+
+.project .container {
+    height: calc(100vh - 60px);
+}
+
+
+/* 作品 */
+
+.portfolio {}
+
+.portfolio .container {
+    height: calc(100vh - 60px);
+}
+
+
+/* 聯絡我 */
+
+.contact {}
+
+.contact .container {
     height: calc(100vh - 60px);
 }
 

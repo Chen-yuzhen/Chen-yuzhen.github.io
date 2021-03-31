@@ -7,11 +7,13 @@
     <title>YuZhen Design</title>
     <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="page_css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="page_js.js"></script>
+
 </head>
 
 <body>
-
-    <input type="checkbox" name="" id="menu_control">
+    <!-- <input type="checkbox" name="" id="menu_control"> -->
     <div class="header">
         <h1 class="logo">
             <a href="yuzhen_design.html"><img src="yu_2.png" alt="Yu Zhen"></a>
@@ -19,7 +21,7 @@
         <label for="menu_control" class="menu_btn">
             <span>選單</span>
         </label>
-        <nav>
+        <nav id="side-nav">
             <a href="#about">ABOUT</a>
             <a href="#experience">EXPERIENCES</a>
             <a href="#skill">SKILLS</a>
@@ -67,45 +69,127 @@
             <div class="title">
                 <h2>Experience</h2>
             </div>
-        </div>
-    </div>
 
-    <div class="skill main-title" id="skill">
-        <div class="container">
-            <div class="title">
-                <h2>Skills</h2>
+            <div class="wrap">
+                <ul class="timeline">
+                    <!-- <li>
+                        <a>
+                            <h2>長庚大學學生會 - 美宣</h2>
+                            <h4>2017.09 - 2018.09</h4>
+                            <p>｜ 製作海報、簡報<br>｜ 協助舉辦長庚大學深耕演講<br>｜ 協助舉辦長庚大學風車節</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <h2>長庚大學數位健康實驗室 -
+                                <br>研究工讀生</h2>
+                            <h4>2018.07 - 2019.02</h4>
+                            <p>協助教授整合多種健康相關資料，使用Ｒ語言進行數據分析，探討醫療與健康促進行為中的診斷與治療模式，以達到臨床路徑最佳化、診斷決策支援、即時的疾病監測、提升醫療品質與健康促進等目的。
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <h2>第25屆大專院校<br>資訊應用服務創新競賽</h2>
+                            <h4>2020.10 - 2020.11</h4>
+                            <p>lunch,dinner or Mate?一起趣吃飯<br>｜ 獲ＡＷＳ組 複賽資格</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <h2>長庚大學資訊管理學系<br>畢業專題獲獎</h2>
+                            <h4>2020.03 - 2020.12</h4>
+                            <p>lunch,dinner or Mate？一起趣吃飯<br>｜ 畢業成果展 - 優勝<br>｜ 創客領域創新競賽 資訊組 - 佳作
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <h2>成績優異提前畢業</h2>
+                            <h4>2017.09 - 2021.02</h4>
+                            <p>畢業於長庚大學資訊管理學系</p>
+                        </a>
+                    </li> -->
+                    <li>
+                        <div>
+                            <h2>長庚大學學生會 - 美宣</h2>
+                            <h4>2017.09 - 2018.09</h4>
+                            <p>｜ 製作海報、簡報<br>｜ 協助舉辦長庚大學深耕演講<br>｜ 協助舉辦長庚大學風車節</p>
+                            </a>
+                    </li>
+                    <li>
+                        <div>
+                            <h2>長庚大學數位健康實驗室 -
+                                <br>研究工讀生</h2>
+                            <h4>2018.07 - 2019.02</h4>
+                            <p>協助教授整合多種健康相關資料，使用Ｒ語言進行數據分析，探討醫療與健康促進行為中的診斷與治療模式，以達到臨床路徑最佳化、診斷決策支援、即時的疾病監測、提升醫療品質與健康促進等目的。<br>
+                                <a href="https://dhlab-tseng.github.io/" target="_blank">數位健康實驗室<i class="fa fa-link"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h2>第25屆大專院校<br>資訊應用服務創新競賽</h2>
+                            <h4>2020.10 - 2020.11</h4>
+                            <p>lunch,dinner or Mate?一起趣吃飯<br>｜ 獲ＡＷＳ組 複賽資格</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h2>長庚大學資訊管理學系<br>畢業專題獲獎</h2>
+                            <h4>2020.03 - 2020.12</h4>
+                            <p>lunch,dinner or Mate？一起趣吃飯<br>｜ 畢業成果展 - 優勝<br>｜ 創客領域創新競賽 資訊組 - 佳作
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h2>成績優異提前畢業</h2>
+                            <h4>2017.09 - 2021.02</h4>
+                            <p>畢業於長庚大學資訊管理學系</p>
+                        </div>
+                    </li>
+                </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="skill main-title" id="skill">
+            <div class="container">
+                <div class="title">
+                    <h2>Skills</h2>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="project main-title" id="project">
-        <div class="container">
-            <div class="title">
-                <h2>Project</h2>
+        <div class="project main-title" id="project">
+            <div class="container">
+                <div class="title">
+                    <h2>Project</h2>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="portfolio main-title" id="portfolio">
-        <div class="container">
-            <div class="title">
-                <h2>Portfolios</h2>
+        <div class="portfolio main-title" id="portfolio">
+            <div class="container">
+                <div class="title">
+                    <h2>Portfolios</h2>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="contact main-title" id="contact">
-        <div class="container">
-            <div class="title">
-                <h2>Contact Me</h2>
+        <div class="contact main-title" id="contact">
+            <div class="container">
+                <div class="title">
+                    <h2>Contact Me</h2>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="footer">
-        &copy; copyright 2021 by yuzhen
-    </div>
+        <div class="footer">
+            &copy; copyright 2021 by yuzhen
+        </div>
 
 </body>
 
