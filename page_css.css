@@ -1,4 +1,5 @@
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+/* @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"); */
+
 * {
     margin: 0;
     padding: 0;
@@ -379,7 +380,6 @@ form {
 }
 
 .about .container .content .txt {
-    /* width: 400px; */
     width: 100%;
     text-align: center;
     padding: 0 5px;
@@ -411,7 +411,7 @@ form {
 
 @media screen and (min-width: 720px) {
     .about .container {
-        height: calc(100vh - 60px);
+        /* height: calc(100vh - 60px); */
     }
 }
 
@@ -650,7 +650,7 @@ form {
     width: 100%;
     height: 55px;
     background-color: rgb(203, 179, 205, .2);
-    margin-top: 1.5em;
+    margin-top: 1em;
     border-radius: 20px;
     line-height: 3;
     font-size: 18px;
@@ -757,6 +757,8 @@ form {
     }
     .item .other li {
         width: auto;
+        margin-top: 1em;
+        padding-left: 5px;
     }
 }
 
@@ -785,6 +787,66 @@ form {
 
 .contact .container {
     height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact .wrap {
+    text-align: center;
+    margin: auto;
+}
+
+.contact .wrap img {
+    width: 320px;
+    height: 320px;
+}
+
+.info {
+    text-align: center;
+}
+
+.info h2 {
+    padding: 10px 0;
+    color: #523A34;
+}
+
+.info p {
+    padding-bottom: 1em;
+    color: #b490a2;
+}
+
+.info ul {
+    padding-bottom: 10px;
+}
+
+.info ul li {
+    display: inline;
+    margin: 10px 0px;
+    font-size: 40px;
+    padding-bottom: 1em;
+}
+
+.info .fa {
+    color: #685369;
+    padding-right: 5px;
+}
+
+.info a {
+    text-decoration: none;
+}
+
+.info a:hover .fab {
+    color: #cbb3bf;
+}
+
+.info .fab {
+    color: #685369;
+}
+
+@media screen and (min-width: 1190px) {
+    .contact .container {
+        height: calc(100vh - 80px);
+    }
 }
 
 
