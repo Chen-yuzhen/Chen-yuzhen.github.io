@@ -384,6 +384,7 @@ form {
 }
 
 .about .container .content .txt {
+    color: #3f2e29;
     width: 100%;
     text-align: center;
     padding: 0 5px;
@@ -417,9 +418,6 @@ form {
     .about .container {
         min-height: calc(100vh - 60px);
     }
-    .about .container .content {
-        min-height: calc(100vh - 60px);
-    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -427,7 +425,6 @@ form {
         min-height: calc(100vh - 80px);
     }
     .about .container .content {
-        /* padding: 20px; */
         flex-wrap: nowrap;
     }
     .about .container .content .photo {
@@ -775,7 +772,106 @@ form {
 .project {}
 
 .project .container {
-    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.project .container .content {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.project .container .content .photo img {
+    opacity: .8;
+    width: 200px;
+    height: 200px;
+    padding: 20px 0 0 0;
+}
+
+.project .container .content .txt {
+    width: 100%;
+    padding: 0 5px;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: left;
+    color: #3f2e29;
+}
+
+.project .container .content .txt h3 {}
+
+.project .container .content .txt h4 {}
+
+.project .container .content .txt p {
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.project .container .content .txt .more {
+    margin: auto;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.project .container .content .txt .more a {
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 30px;
+    font-size: 15px;
+    background-color: #CBB3BF;
+    color: #fff;
+    border-radius: 300px;
+    letter-spacing: 2px;
+    transition: all .3s;
+}
+
+.project .container .content .txt .more a:hover {
+    background-color: #685369;
+}
+
+@media screen and (min-width: 720px) {
+    .project .container {
+        min-height: calc(100vh - 60px);
+    }
+    .project .container .content {
+        display: block;
+    }
+    .project .container .content .photo img {
+        float: left;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .project .container {
+        min-height: calc(100vh - 80px);
+    }
+    .project .container .content {
+        flex-wrap: nowrap;
+    }
+    .project .container .content .photo {
+        background-color: #eee;
+        align-self: center;
+    }
+    .project .container .content .photo img {
+        width: 300px;
+        height: 300px;
+        /* margin: 10px 0 60px 0; */
+    }
+    .project .container .content .txt {
+        padding: 10px 0 0 0px;
+        line-height: 1.8;
+        font-size: 18px;
+    }
+    .project .container .content .txt .more {
+        margin: 2em 0;
+        font-size: 16px;
+    }
 }
 
 
@@ -784,13 +880,25 @@ form {
 .portfolio {}
 
 .portfolio .container {
+    background-image: linear-gradient(-45deg, #fff, #f8e7e7);
     min-height: calc(100vh - 60px);
     text-align: center
 }
 
+.portfolio .container .title {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.portfolio .container .title h2 {
+    width: 100%;
+}
+
 .allportfolio {
-    padding-top: 2em;
-    padding-bottom: 10px;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .allportfolio ul {
@@ -800,8 +908,8 @@ form {
 }
 
 .allportfolio ul li {
-    width: 350px;
-    height: 150px;
+    width: 320px;
+    height: 180px;
     margin: 5px 10px;
 }
 
@@ -816,7 +924,7 @@ form {
     height: 100%;
     opacity: 1;
     transition: all ease .5s;
-    color: #262626;
+    color: #523A34;
     font-size: 20px;
     border-radius: 20px;
 }
@@ -841,8 +949,14 @@ form {
     .portfolio .container {
         min-height: calc(100vh - 80px);
     }
+    .portfolio .container .title {
+        min-height: calc(100vh - 120px);
+    }
     .allportfolio .hover_title {
         opacity: 0;
+    }
+    .portfolio .container .title h2::after {
+        top: 60px;
     }
 }
 
