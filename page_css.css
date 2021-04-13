@@ -234,7 +234,7 @@ form {
     align-self: center;
     position: absolute;
     bottom: 7%;
-    border: 2px solid #fff;
+    border: 3px solid #fff;
     border-radius: 16px;
     height: 40px;
     width: 25px;
@@ -246,7 +246,7 @@ form {
     position: relative;
     border-radius: 10px;
     background: #fff;
-    width: 2px;
+    width: 3px;
     height: 6px;
     top: 4px;
     margin-left: auto;
@@ -390,6 +390,13 @@ form {
     padding: 0 5px;
     line-height: 1.5;
     font-size: 16px;
+}
+
+.about .container .content .txt p {
+    margin-top: 10px;
+    color: #685369;
+    border-top: 1px solid #68536970;
+    border-bottom: 1px solid #68536970;
 }
 
 .about .container .content .txt .resume {
@@ -802,9 +809,9 @@ form {
     color: #3f2e29;
 }
 
-.project .container .content .txt h3 {}
-
-.project .container .content .txt h4 {}
+.project .container .content .txt h3 {
+    margin-top: 10px;
+}
 
 .project .container .content .txt p {
     font-weight: 300;
@@ -835,6 +842,10 @@ form {
     background-color: #685369;
 }
 
+.project .container .content .txt .fas {
+    color: #685369;
+}
+
 @media screen and (min-width: 720px) {
     .project .container {
         min-height: calc(100vh - 60px);
@@ -859,9 +870,9 @@ form {
         align-self: center;
     }
     .project .container .content .photo img {
-        width: 300px;
-        height: 300px;
-        /* margin: 10px 0 60px 0; */
+        width: 350px;
+        height: 350px;
+        /* margin: 10px 0 30px 0; */
     }
     .project .container .content .txt {
         padding: 10px 0 0 0px;
@@ -896,6 +907,10 @@ form {
     width: 100%;
 }
 
+.portfolio .container .title h2:after {
+    top: 50px;
+}
+
 .allportfolio {
     padding-top: 1em;
     padding-bottom: 1em;
@@ -924,12 +939,17 @@ form {
     height: 100%;
     opacity: 1;
     transition: all ease .5s;
-    color: #523A34;
+    /* color: #523A34; */
+    color: #fff;
     font-size: 20px;
     border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
 
 .allportfolio .box img {
+    width: 320px;
+    height: 180px;
     border-radius: 20px;
     vertical-align: bottom;
 }

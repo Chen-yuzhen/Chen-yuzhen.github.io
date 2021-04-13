@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: #8d8187;
+    opacity: 1;
+}
+
+body {
+    background-image: linear-gradient(120deg, #fcde9cc9, #cbb3bf);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 800px;
+    margin: auto;
+    padding: 10px;
+}
+
+.banner {
+    margin-bottom: 2em;
+}
+
+h1 {
+    color: #523a34;
+}
+
+.wrap {
+    border: 10px #fff;
+    position: relative;
+    padding: 40px;
+    border: 2px solid rgb(252, 241, 226);
+    box-shadow: 10px 15px 0px rgb(252, 241, 226);
+    border-radius: 20px;
+}
+
+.txt {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #523a34;
+    background: none;
+    padding: 10px;
+    outline: none;
+    font-size: 18px;
+    color: #523a34;
+}
+
+.btn {
+    position: absolute;
+    right: 51px;
+    top: 117px;
+    color: #523a34;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.btn:hover {
+    color: rgb(252, 241, 226);
+}
+
+h3 {
+    margin: 20px 0;
+    color: #523a34;
+}
+
+.task {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 18px;
+    margin: 6px 0;
+    overflow: hidden;
+    color: #523a34;
+}
+
+.task i {
+    float: right;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.comp .task {
+    background: rgba(0, 0, 0, .3);
+    color: #fff;
+}
