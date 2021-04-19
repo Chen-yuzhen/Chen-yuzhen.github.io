@@ -233,6 +233,7 @@ header ul li a:hover {
     }
     .content .imgBox img {
         max-width: 300px;
+        max-height: 430px;
     }
     .thumb li img {
         max-width: 40px;

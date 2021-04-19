@@ -1,9 +1,9 @@
-/* @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"); */
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 * {
     margin: 0;
     padding: 0;
     list-style: none;
+    font-family: 'Poppins', serif;
     scroll-behavior: smooth;
 }
 
@@ -193,7 +193,7 @@ form {
     }
     nav a {
         border-bottom: none;
-        font-weight: 900;
+        font-weight: 500;
     }
     .header .header-search {
         display: flex;
@@ -1060,4 +1060,16 @@ form {
     padding: 10px 0;
     bottom: 0;
     margin: 40px 0 0 0;
+}
+
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance: none) {
+        .main-title .container .title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .header .header-search input {
+            -webkit-appearance: none;
+        }
+    }
 }
