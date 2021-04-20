@@ -56,13 +56,15 @@ body::-webkit-scrollbar {
 .menu_btn {
     width: 40px;
     height: 40px;
-    background-color: #523A34;
+    /* background-color: #523A34; */
+    background-color: transparent;
     opacity: .8;
     border-radius: 15px;
     display: block;
     position: absolute;
     top: 10px;
     right: 10px;
+    cursor: pointer;
 }
 
 .menu_btn span {
@@ -78,22 +80,30 @@ body::-webkit-scrollbar {
     position: absolute;
     height: 2px;
     left: 10px;
-    width: 20px;
-    background-color: #fff;
+    width: 25px;
+    background-color: #685369;
     top: 0;
     bottom: 0;
     margin: auto;
-    box-shadow: 0px 8px 0px #fff, 0px -8px 0px #fff;
+    box-shadow: 0px 8px 0px #685369, 0px -8px 0px #685369;
+    border-radius: 5px;
 }
 
 nav {
-    width: 50%;
+    width: 40%;
+    left: -40%;
     height: calc(100vh - 60px);
     background-color: #FCDE9C;
     position: absolute;
     top: 60px;
-    display: none;
-    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    transition: .6s;
+}
+
+.nav-active {
+    left: 0;
+    display: flex;
 }
 
 nav a {
@@ -102,6 +112,7 @@ nav a {
     color: #3b2925;
     padding: 10px 20px;
     border-bottom: 1px solid #523A34;
+    letter-spacing: 2px;
 }
 
 form {
@@ -186,6 +197,7 @@ form {
         position: relative;
         left: 0;
         display: flex;
+        flex-direction: row;
         width: auto;
         height: auto;
         top: 0;
