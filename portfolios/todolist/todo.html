@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrap">
+            <div class="banner">
+                <h1>To Do List <i class="far fa-edit"></i></h1>
+            </div>
+            <input type="text" class="txt" placeholder="Add a task">
+            <div class="btn"><i class="fas fa-plus"></i></div>
+            <div class="notcomp">
+                <h3>Not Completed</h3>
+            </div>
+
+            <div class="comp">
+                <h3>Completed</h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    // localStorage.clear();
+    var getData = localStorage.getItem('task');
+    var taskArray = JSON.parse(getData);
+    var getcompData = localStorage.getItem('comptask');
+    var compArray = JSON.parse(getcompData);
+    console.log(taskArray);
+    console.log(compArray);
+
+    $(document).ready(function() {
+        if (taskArray != null) {
+            for (var i = 0; i < taskArray.length; i++) {
+                var tasktxt = $("<div class='task'></div>").text(taskArray[i]);
+                addtask(tasktxt);
+            };
+        } else {
+            taskArray = [];
+            console.log(taskArray);
+        }
+        if (compArray != null) {
+            for (var i = 0; i < compArray.length; i++) {
+                var tasktxt = $("<div class='task'></div>").text(compArray[i]);
+                addcomptask(tasktxt);
+            };
+        } else {
+            compArray = [];
+            console.log(compArray);
+        }
+    });
+
+    $(".txt").on("keyup", function(e) {
+        //13 means enter button
+        if (e.keyCode == 13 && $(".txt").val() != "") {
+            var tasktxt = $("<div class='task'></div>").text($(".txt").val());
+            taskArray.push($(".txt").val())
+            arrayToString();
+            addtask(tasktxt);
+        }
+    });
+
+    $(".btn").click(function() {
+        if ($(".txt").val() != "") {
+            var tasktxt = $("<div class='task'></div>").text($(".txt").val());
+            taskArray.push($(".txt").val());
+            // taskArray.shift();
+            console.log(taskArray);
+            arrayToString();
+            addtask(tasktxt);
+        }
+    });
+
+    function arrayToString() {
+        var taskString = JSON.stringify(taskArray);
+        localStorage.setItem('task', taskString);
+        var compString = JSON.stringify(compArray);
+        localStorage.setItem('comptask', compString);
+    }
+
+    function addtask(task) {
+        var del = $("<i class='fas fa-trash-alt'></i>").click(function() {
+            var p = $(this).parent();
+            del_taskarray(p.text());
+            p.fadeOut(function() {
+                p.remove();
+            });
+        });
+
+        var check = $("<i class='fas fa-check'></i>").click(function() {
+            var p = $(this).parent();
+            console.log(p.text());
+            compArray.push(p.text());
+            // compArray.shift();
+            console.log(compArray);
+            check_taskarray(p.text());
+            arrayToString();
+            p.fadeOut(function() {
+                $(".comp").append(p);
+                p.fadeIn();
+            });
+            $(this).remove();
+        });
+
+        task.append(del, check);
+        $(".notcomp").append(task);
+        //clear the input
+        $(".txt").val("");
+    }
+
+    function addcomptask(task) {
+        var del = $("<i class='fas fa-trash-alt'></i>").click(function() {
+            var p = $(this).parent();
+            del_taskarray(p.text());
+            p.fadeOut(function() {
+                p.remove();
+            });
+        });
+
+        task.append(del);
+        $(".comp").append(task);
+    }
+
+    function del_taskarray(deltxt) {
+        if (taskArray != null) {
+            for (var i = 0; i < taskArray.length; i++) {
+                if (deltxt == taskArray[i]) {
+                    taskArray.splice(i, 1);
+                    console.log(taskArray);
+                    arrayToString();
+                }
+            }
+        }
+
+        if (compArray != null) {
+            for (var i = 0; i < compArray.length; i++) {
+                if (deltxt == compArray[i]) {
+                    compArray.splice(i, 1);
+                    console.log(compArray);
+                    arrayToString();
+                }
+            }
+        }
+    }
+
+    function check_taskarray(checktxt) {
+        for (var i = 0; i < taskArray.length; i++) {
+            if (checktxt == taskArray[i]) {
+                taskArray.splice(i, 1);
+                console.log(taskArray);
+                arrayToString();
+            }
+        }
+    }
+</script>
+
+</html>
