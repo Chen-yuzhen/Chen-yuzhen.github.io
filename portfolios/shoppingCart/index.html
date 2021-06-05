@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <nav class="nav">
+        <h2 class="nav__header">Yu_Zhen</h2>
+        <div class="nav__cart">
+          <button @click="showCartHandler">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+          <span class="total-quantity">{{ totalQuantity }}</span>
+          <div v-show="showCart" class="cart-dropdown">
+            <table class="cart-dropdown__list">
+              <tr>
+                <th>產品</th>
+                <th>數量</th>
+                <th></th>
+                <th>價錢</th>
+              </tr>
+              <tr v-for="product in cart" :key="product.id">
+                <td>{{ product.name }}</td>
+                <td>x {{ product.quantity }}</td>
+                <td>=</td>
+                <td>$ {{ product.quantity * product.price }}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>$ {{ totalPrice }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </nav>
+
+      <section class="products">
+        <div v-for="product in products" :key="product.id" class="product">
+          <h3 class="product__header">{{ product.name }}</h3>
+          <img :src="product.src" :alt="product.name" class="product__image" />
+          <p class="product__description">{{ product.description }}</p>
+          <p class="product__price">$ {{ product.price }}</p>
+          <div class="cart">
+            <button
+              @click="updateCart(product, 'subtract')"
+              class="cart__button"
+            >
+              -
+            </button>
+            <span class="cart__quantity">{{ product.quantity }}</span>
+            <button @click="updateCart(product, 'add')" class="cart__button">
+              +
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
